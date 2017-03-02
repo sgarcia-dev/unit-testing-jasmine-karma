@@ -71,9 +71,9 @@ module.exports = function(config) {
     concurrency: Infinity,
 
     plugins: [
-      'karma-browserify',
-			'karma-jasmine',
-			'karma-chrome-launcher'
+        'karma-browserify',
+	    'karma-jasmine',
+	    'karma-chrome-launcher'
     ]
   })
 }

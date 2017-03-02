@@ -33,7 +33,11 @@ function heavyWork() {
          return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if (!name || !age)
-                    reject(new Error('Please insert valid user data'))
+                    reject(new Error('Please insert valid user data'));
+                else if (typeof name !== 'string')
+                    reject(new Error('Please insert valid user data'));
+                else if (typeof age !== 'number')
+                    reject(new Error('Please insert valid user data'));
                 else
                     resolve(true);
             }, 500);
@@ -41,7 +45,7 @@ function heavyWork() {
     }
 
     function callDependency() {
-        return dependency();
+        return this.dependency();
     }
     
     function dependency() {
